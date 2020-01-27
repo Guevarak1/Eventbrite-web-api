@@ -4,7 +4,7 @@ import com.wrapper.eventbrite.model_objects.spec.Email;
 import com.wrapper.eventbrite.model_objects.spec.User;
 import com.wrapper.eventbrite.requests.data.GetMyUserRequest;
 
-public class ApiExample {
+public class Main {
     public static final String ACCESS_TOKEN = "your access token";
 
     public static void main(String[] args) {
