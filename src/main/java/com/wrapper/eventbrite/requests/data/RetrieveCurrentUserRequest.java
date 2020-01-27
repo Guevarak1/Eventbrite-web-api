@@ -6,10 +6,10 @@ import com.wrapper.eventbrite.model_objects.spec.User;
 
 import java.io.IOException;
 
-@JsonDeserialize(builder = GetMyUserRequest.Builder.class)
-public class GetMyUserRequest extends AbstractDataRequest<User> {
+@JsonDeserialize(builder = RetrieveCurrentUserRequest.Builder.class)
+public class RetrieveCurrentUserRequest extends AbstractDataRequest<User> {
 
-    private GetMyUserRequest(final Builder builder) { super (builder); }
+    private RetrieveCurrentUserRequest(final Builder builder) { super (builder); }
 
     public User execute() throws IOException, EventbriteWebApiException {
         String jsonString = getJson();
@@ -21,9 +21,9 @@ public class GetMyUserRequest extends AbstractDataRequest<User> {
         public Builder(final String accessToken) { super(accessToken); }
 
         @Override
-        public GetMyUserRequest build(){
+        public RetrieveCurrentUserRequest build(){
             setPath("/v3/users/me");
-            return new GetMyUserRequest(this);
+            return new RetrieveCurrentUserRequest(this);
         }
     }
 }

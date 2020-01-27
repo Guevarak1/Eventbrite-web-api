@@ -1,6 +1,7 @@
 package com.wrapper.eventbrite;
 
-import com.wrapper.eventbrite.requests.data.GetMyUserRequest;
+import com.wrapper.eventbrite.requests.data.RetrieveCurrentUserRequest;
+import com.wrapper.eventbrite.requests.data.RetrieveUserRequest;
 
 import java.util.logging.Logger;
 
@@ -44,8 +45,14 @@ public class EventbriteApi {
     }
 
     //Requests
-    public GetMyUserRequest.Builder getMyUser(){
-        return new GetMyUserRequest.Builder(accessToken)
+    public RetrieveCurrentUserRequest.Builder retrieveCurrentUser(){
+        return new RetrieveCurrentUserRequest.Builder(accessToken)
+                .setDefaults(httpManager, scheme, host, port);
+    }
+
+    public RetrieveUserRequest.Builder retrieveUser(String userId){
+        return new RetrieveUserRequest.Builder(accessToken)
+                .userId(userId)
                 .setDefaults(httpManager, scheme, host, port);
     }
 
