@@ -1,0 +1,4 @@
+.idea/
+eventbrite-web-api.iml
+target/
+src/main/java/com/wrapper/eventbrite/Main.java
